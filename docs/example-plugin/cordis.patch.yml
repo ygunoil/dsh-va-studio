@@ -1,0 +1,7 @@
+# 本包作为 bundle 自带的 patch 层：`dsh.bundle.patch` 指向本文件。
+# package.json 的 dsh.profile.bundles 引用包名后，dsh 会把这一层插进 profile 组合。
+- insert:
+    - id: dsh-va-studio-example
+      name: dsh-va-studio-example
+      config:
+        greeting: hello-from-dsh-va-studio-example

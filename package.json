@@ -1,0 +1,67 @@
+{
+  "name": "dsh-va-studio",
+  "version": "0.2.0",
+  "description": "Connect DeepSeek Harness to a local or production VA Studio backend: generate short dramas, images, videos, novels and screenplays, and reverse-engineer image or video prompts.",
+  "type": "module",
+  "main": "./dsh/index.js",
+  "exports": {
+    ".": "./dsh/index.js",
+    "./client": "./client/client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "dsh",
+    "client",
+    "lib",
+    "skills",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "author": "VA Studio",
+  "keywords": [
+    "dsh-plugin",
+    "va-studio",
+    "short-drama",
+    "novel",
+    "screenplay",
+    "video",
+    "prompt-reverse"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0",
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "@deepseek-ai/dsh-client-connection": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-credentials": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-skill": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-system-prompt": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-tools": ">=0.2.1-rc.2 <0.3.0-0",
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ygunoil/dsh-va-studio.git"
+  },
+  "homepage": "https://github.com/ygunoil/dsh-va-studio#readme",
+  "bugs": {
+    "url": "https://github.com/ygunoil/dsh-va-studio/issues"
+  }
+}
