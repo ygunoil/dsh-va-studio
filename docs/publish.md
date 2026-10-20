@@ -24,7 +24,13 @@
 
 ## 今天要做的（创建仓库与发布物）
 
-已安装 GitHub CLI 后，由有权限的账号执行：
+登录 GitHub 后可直接运行仓库里的脚本（依次创建仓库、推送、设置 topic、发布 Release）：
+
+```bash
+bash scripts/publish-github.sh
+```
+
+等价的手工命令：
 
 ```bash
 cd /Users/mac/Desktop/xxt/dsh-va-studio
